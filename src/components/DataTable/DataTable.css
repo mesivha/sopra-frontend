@@ -1,0 +1,69 @@
+/* This wrapper allows the table to scroll horizontally on small screens */
+.data-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse; /* This makes the borders clean */
+  white-space: nowrap; /* Prevents text from wrapping */
+  font-size: 0.9rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+/* Table Header */
+.data-table th {
+  background-color: var(--bg-color);
+  color: var(--text-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+/* Table Body */
+.data-table tbody tr:hover {
+  background-color: var(--bg-color);
+}
+
+.cell-id {
+  color: var(--primary-color);
+  font-weight: 600;
+  cursor: pointer;
+}
+.cell-id:hover {
+  text-decoration: underline;
+}
+
+/* Status Column */
+.cell-status {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.status-tag {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.status-tag.pass {
+  background-color: var(--status-pass);
+}
+.status-tag.fail {
+  background-color: var(--status-fail);
+}
+.status-tag.warn {
+  background-color: var(--status-warn);
+  color: var(--text-primary); /* Yellow needs dark text */
+}

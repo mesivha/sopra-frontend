@@ -1,0 +1,243 @@
+.testcase-page-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* 1/3 for form, 2/3 for repos */
+  gap: 1.5rem;
+  /* Align items at the start, not stretching them */
+  align-items: start;
+}
+
+/* ------------------- */
+/* LEFT COLUMN (FORM) */
+/* ------------------- */
+.testcase-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.page-title-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.page-title-bar h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+.back-button {
+  background: var(--card-bg-color);
+  border: 1px solid var(--border-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+.back-button:hover {
+  background-color: var(--bg-color);
+}
+
+.testcase-form-card {
+  background: var(--card-bg-color);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+
+.testcase-form-card .form-group {
+  margin-bottom: 1.5rem;
+}
+.testcase-form-card label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+.testcase-form-card input,
+.testcase-form-card select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.select-with-button {
+  display: flex;
+  gap: 0.5rem;
+}
+.select-with-button select {
+  flex: 1;
+}
+.add-button {
+  width: 44px;
+  flex-shrink: 0;
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.add-button:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-show-existing,
+.btn-create-testcase {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+}
+.btn-show-existing {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+.btn-show-existing:hover {
+  background-color: var(--bg-color);
+}
+.btn-create-testcase {
+  background: var(--primary-color);
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn-create-testcase:hover {
+  background-color: var(--primary-hover);
+}
+
+/* ------------------- */
+/* RIGHT COLUMN (REPOS) */
+/* ------------------- */
+.repository-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.repo-header {
+  background: var(--card-bg-color);
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+.repo-header h3 {
+  margin: 0 0 1rem 0;
+  color: var(--text-primary);
+}
+.repo-tabs {
+  display: flex;
+  gap: 0.5rem;
+}
+.repo-tab-btn {
+  border: none;
+  background: var(--bg-color);
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+}
+.repo-tab-btn.active {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Repo Tables */
+.repo-table-container {
+  background: var(--card-bg-color);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+.repo-table-container h3 {
+  margin-top: 0;
+}
+.repo-table-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+.repo-table-controls select,
+.repo-table-controls input {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 0.4rem;
+}
+.repo-table-controls input {
+  font-size: 0.9rem;
+}
+
+.repo-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.repo-table th,
+.repo-table td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border: 1px solid var(--border-color);
+  font-size: 0.9rem;
+}
+.repo-table th {
+  background-color: var(--bg-color);
+  font-weight: 600;
+}
+.icon-expand {
+  color: var(--primary-color);
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+.repo-table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+}
+.pagination {
+  display: flex;
+}
+.pagination button {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--border-color);
+  background: #fff;
+  cursor: pointer;
+}
+.pagination button.active {
+  background: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+}
+.pagination button:disabled {
+  color: var(--text-light);
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .testcase-page-container {
+    grid-template-columns: 1fr; /* Stack columns */
+  }
+}

@@ -1,0 +1,140 @@
+.layout-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-color);
+  overflow: hidden;
+}
+
+/* ------------------- */
+/* 1. SIDEBAR */
+/* ------------------- */
+.sidebar {
+  width: 260px; /* Full width sidebar with text */
+  background-color: var(--card-bg-color);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+  padding: 1.5rem 1rem;
+}
+
+/* On hover, let's make it minimal (like your screenshot) */
+.sidebar:hover {
+  width: 260px;
+}
+.sidebar {
+  width: 80px; /* Minimal icon-only bar */
+}
+.sidebar .nav-link span {
+  display: none;
+  opacity: 0;
+}
+.sidebar:hover .nav-link span {
+  display: inline-block;
+  opacity: 1;
+  transition: opacity 0.3s ease 0.1s;
+}
+
+.sidebar-logo {
+  font-size: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0.5rem 0;
+}
+
+.sidebar-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  text-decoration: none;
+  color: var(--text-light);
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.nav-link i {
+  font-size: 1.2rem;
+  width: 24px; /* Fixed width for icon alignment */
+  text-align: center;
+}
+
+.nav-link:hover {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+}
+
+.nav-item.active .nav-link {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* ------------------- */
+/* 2. MAIN CONTENT */
+/* ------------------- */
+.main-content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.topbar {
+  height: 70px;
+  background-color: var(--card-bg-color);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  flex-shrink: 0; /* Prevents topbar from shrinking */
+}
+
+.logo-text {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+.logo-text b {
+  font-weight: 700;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.user-role {
+  background-color: #ffe8e6;
+  color: #f06a6a;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.user-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.page-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto; /* This makes the content area scrollable */
+}
