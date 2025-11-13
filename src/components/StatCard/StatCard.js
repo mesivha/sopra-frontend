@@ -9,7 +9,7 @@ const StatCard = ({ title, value, icon, iconClass }) => {
         <span className="stat-card-value">{value}</span>
       </div>
       <div className={`stat-card-icon ${iconClass}`}>
-        <i className={icon}></i>
+        <i className={icon}></i> 
       </div>
     </div>
   );
