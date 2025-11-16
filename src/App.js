@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <MainLayout>
         <Routes>
-          {/* Main Routes */}
+         
           <Route path="/" element={<Dashboard />} />
           <Route path="/users" element={<UserManagement />} />
           
@@ -21,11 +21,6 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/test-cases" element={<CreateTestCase />} />
           <Route path="/devtools" element={<FrameworkConfig />} />
-
-          {/* Add other routes here as you build them */}
-          {/* <Route path="/test-runs" element={...} /> */}
-          {/* <Route path="/repositories" element={...} /> */}
-          {/* <Route path="/docs" element={...} /> */}
 
         </Routes>
       </MainLayout>
