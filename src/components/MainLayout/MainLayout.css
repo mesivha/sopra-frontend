@@ -6,9 +6,6 @@
   overflow: hidden;
 }
 
-/* ------------------- */
-/* 1. SIDEBAR */
-/* ------------------- */
 .sidebar {
   width: 260px; /* Full width sidebar with text */
   background-color: var(--card-bg-color);
@@ -61,7 +58,7 @@
   text-decoration: none;
   color: var(--text-light);
   border-radius: var(--border-radius);
-  font-weight: 500;
+  font-weight: 470;
   white-space: nowrap;
 }
 
@@ -86,7 +83,7 @@
 /* ------------------- */
 .main-content-wrapper {
   flex: 1;
-  display: flex;
+  display: flex; 
   flex-direction: column;
   overflow: hidden;
 }
