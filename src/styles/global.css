@@ -1,8 +1,8 @@
 /* :root allows us to define global CSS variables */
 :root {
   /* Primary Colors */
-  --primary-color: #4A69FF; /* A vibrant, professional blue */
-  --primary-hover: #3b54cc;
+  --primary-color: #0b57d0; /* A vibrant, professional blue */
+  --primary-hover: #3775e0;
   
   /* Neutral Colors */
   --bg-color: #F8F9FA;         /* Main page background */
@@ -27,7 +27,8 @@
 /* A reset to make our new design work properly */
 body {
   margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  /* font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; */
+  font-family: 'Roboto', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-secondary);
 }
