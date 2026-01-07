@@ -6,7 +6,6 @@ import './Dashboard.css';
 const Dashboard = () => {
   return (
     <div className="dashboard-container">
-      {/* Row 1: Stat Cards */}
       <div className="stat-card-grid">
         <StatCard
           title="Total Test Runs"

@@ -5,12 +5,13 @@ import UserManagement from './pages/UserManagement/UserManagement';
 import Profile from './pages/Profile/Profile';
 import CreateTestCase from './pages/CreateTestCase/CreateTestCase';
 import FrameworkConfig from './pages/FrameworkConfig/FrameworkConfig';
-import LoginPage from './pages/LoginPage/LoginPage'; 
+import LoginPage from './pages/LoginPage/LoginPage';
 function App() {
   return (
     <BrowserRouter>
       <MainLayout>
         <Routes>
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/" element={<Dashboard />} />
           <Route path="/users" element={<UserManagement />} />
           <Route path="/profile" element={<Profile />} />
