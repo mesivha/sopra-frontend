@@ -26,7 +26,7 @@ Clone the repository:
 
 Bash
 
-git clone https://github.com/yourusername/sopra-frontend.git
+git clone https://github.com/mesivha/sopra-frontend.git
 Install dependencies:
 
 Bash
