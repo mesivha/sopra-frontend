@@ -1,8 +1,8 @@
 /* :root allows us to define global CSS variables */
 :root {
   /* Primary Colors */
-  --primary-color: #0b57d0; /* A vibrant, professional blue */
-  --primary-hover: #3775e0;
+  --primary-color: #d00b0b; /* A vibrant, professional blue */
+  --primary-hover: #fa8e00ee;
   
   /* Neutral Colors */
   --bg-color: #F8F9FA;         /* Main page background */
