@@ -1,23 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import SopraIcon from "../../assets/sopra-icon.svg";
+import SopraLogo from "../../assets/logo-soprasteria.svg";
 import './MainLayout.css';
-
 const MainLayout = ({ children }) => {
   const navigate = useNavigate();
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const handleLogout = () => {
     // In a real application, you would clear auth tokens here
     // e.g., localStorage.removeItem('token');
     navigate('/login');
   };
+  
+  
 
   return (
     <div className="layout-container">
-      {/* --- SIDEBAR --- */}
-      <nav className="sidebar">
-        <div className="sidebar-logo">
-          <i className="fa-solid fa-robot"></i>
-        </div>
+          {/* --- SIDEBAR --- */}
+          <nav className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
+            <div className="sidebar-logo">
+              <img
+                src={SopraIcon}
+                alt="Sopra icon"
+                className="logo-icon"
+              />
+
+              <img
+                src={SopraLogo}
+                alt="Sopra Steria"
+                className="logo-full"
+              />
+            </div>
+
+
         <ul className="sidebar-nav-list">
           <li className="nav-item">
             <Link to="/" className="nav-link">
@@ -54,11 +78,19 @@ const MainLayout = ({ children }) => {
 
       {/* --- MAIN CONTENT AREA --- */}
       <div className="main-content-wrapper">
-        <header className="topbar">
+        <header className={`topbar ${scrolled ? "topbar--blur" : ""}`}>
+          <button
+  className="sidebar-toggle"
+  onClick={() => setIsCollapsed(prev => !prev)}
+  aria-label="Toggle sidebar"
+>
+  ☰
+</button>
+
           <div className="logo-text">
-            <span>Smart</span>
-            <b>Automation</b>
+            <span>Smart <b>Automation</b></span>
           </div>
+
           <div className="user-info">
             <div className="user-details">
               <span className="user-name">Akshat VOHRA</span>
