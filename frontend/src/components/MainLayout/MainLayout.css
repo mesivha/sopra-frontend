@@ -127,16 +127,26 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  transition: backdrop-filter 0.3s ease, background-color 0.3s ease;
+  transition: 
+  backdrop-filter 0.3s ease, 
+  background-color 0.3s ease, 
+  box-shadow 0.3s ease;
 }
-.topbar--blur {
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.7);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+.topbar--glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+/* Dark mode glass */
+[data-theme="dark"] .topbar--glass {
+  background: rgba(22, 27, 34, 0.6);
 }
 .logo-text {
   font-size: 1.25rem;
   color: var(--text-primary);
+  align-items: self-start;
 }
 .logo-text b {
   font-weight: 700;
@@ -165,12 +175,18 @@
   flex: 1;
   padding: 2rem;
   overflow-y: auto; 
+
 }
 .user-details {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   margin-right: 0.5rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.04),
+    transparent 120px
+  );
 }
 .user-name {
   font-size: 0.9rem;

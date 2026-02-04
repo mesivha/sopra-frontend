@@ -7,12 +7,17 @@ const MainLayout = ({ children }) => {
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const content = document.querySelector(".page-content");
+  if (!content) return;
+
+  const onScroll = () => {
+    setScrolled(content.scrollTop > 10);
+  };
+
+  content.addEventListener("scroll", onScroll);
+  return () => content.removeEventListener("scroll", onScroll);
+}, []);
+
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const handleLogout = () => {
@@ -20,9 +25,13 @@ const MainLayout = ({ children }) => {
     // e.g., localStorage.removeItem('token');
     navigate('/login');
   };
-  
-  
-
+  const toggleTheme = () => {
+  const current = document.documentElement.getAttribute("data-theme");
+  document.documentElement.setAttribute(
+    "data-theme",
+    current === "dark" ? "light" : "dark"
+  );
+};
   return (
     <div className="layout-container">
           {/* --- SIDEBAR --- */}
@@ -78,7 +87,7 @@ const MainLayout = ({ children }) => {
 
       {/* --- MAIN CONTENT AREA --- */}
       <div className="main-content-wrapper">
-        <header className={`topbar ${scrolled ? "topbar--blur" : ""}`}>
+        <header className={`topbar ${scrolled ? "topbar--glass" : ""}`}>
           <button
   className="sidebar-toggle"
   onClick={() => setIsCollapsed(prev => !prev)}
@@ -86,6 +95,8 @@ const MainLayout = ({ children }) => {
 >
   ☰
 </button>
+<button onClick={toggleTheme}>🌙</button>
+
 
           <div className="logo-text">
             <span>Smart <b>Automation</b></span>

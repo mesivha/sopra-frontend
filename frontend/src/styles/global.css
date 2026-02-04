@@ -23,7 +23,15 @@
   --border-radius: 8px; /* Rounded corners for everything */
   --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
-
+/* ---------- DARK THEME ---------- */
+[data-theme="dark"] {
+  --bg-color: #0d1117;
+  --card-bg-color: #161b22;
+  --text-primary: #e6edf3;
+  --text-light: #9ca3af;
+  --border-color: #30363d;
+  --primary-color: #f15a29; /* same brand color */
+}
 /* A reset to make our new design work properly */
 body {
   margin: 0;
