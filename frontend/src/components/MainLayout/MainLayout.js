@@ -9,14 +9,18 @@ const MainLayout = ({ children }) => {
   useEffect(() => {
   const content = document.querySelector(".page-content");
   if (!content) return;
-
   const onScroll = () => {
     setScrolled(content.scrollTop > 10);
   };
-
   content.addEventListener("scroll", onScroll);
   return () => content.removeEventListener("scroll", onScroll);
 }, []);
+  useEffect(() => {
+  if (!document.documentElement.getAttribute("data-theme")) {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
+}, []);
+  const [theme, setTheme] = useState("light");
 
   const [isCollapsed, setIsCollapsed] = useState(false);
 
@@ -95,8 +99,6 @@ const MainLayout = ({ children }) => {
 >
   ☰
 </button>
-<button onClick={toggleTheme}>🌙</button>
-
 
           <div className="logo-text">
             <span>Smart <b>Automation</b></span>
@@ -110,7 +112,15 @@ const MainLayout = ({ children }) => {
             <div className="user-avatar">
               <img src="https://i.pravatar.cc/40?img=1" alt="User Avatar" />
             </div>
-            
+            <button
+              className="theme-toggle"
+              onClick={toggleTheme}
+              aria-label="Toggle dark mode"
+            >
+               <span className="theme-icon">
+                {theme =="dark" ? "☀️" : "🌙"}
+              </span>
+            </button>
             {/* --- LOGOUT BUTTON --- */}
             <button className="logout-btn" onClick={handleLogout} title="Sign Out">
               <i className="fa-solid fa-right-from-bracket"></i>
